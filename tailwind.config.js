@@ -12,7 +12,9 @@ export default {
       xl: '1440px'
     },
     extend: {
-
+      fontFamily: {
+        sans: ['Bai Jamjuree', 'sans-serif']
+      }
     }
   },
   plugins: [],
