@@ -1,6 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import RootLayout from './pages/RootLayout';
+import ErrorPage from './pages/ErrorPage';
+
 import Home from './pages/Home';
 import SingUp from './pages/SingUp';
 import LogIn from './pages/LogIn';
@@ -19,6 +21,7 @@ const App = () => {
           <Route path='/log-in' element={!isAuthenticated ? <LogIn /> : <Navigate to='/' />} />
           <Route path='/forgot-password' element={!isAuthenticated ? <ForgotPassword /> : <Navigate to='/' />} />
           <Route path='/bookmarks' element={isAuthenticated ? <Bookmarks /> : <Navigate to='/' />} />
+          <Route path='*' element={<ErrorPage />} />
         </Route>
       </Routes>
     </>
