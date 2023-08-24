@@ -1,11 +1,10 @@
-import { BsBookmark, BsBoxArrowInRight } from "react-icons/bs"; 
+import { BsBookmark } from "react-icons/bs"; 
 import { AiOutlineStar, AiOutlineFire, AiOutlineSearch, AiOutlineUser } from "react-icons/ai"; 
 import { IoMdExit } from "react-icons/io"; 
 import { Link } from "react-router-dom";
 import { getAuth } from 'firebase/auth';
 
 const Sidebar = () => {
-
   const logoutHandler = () => {
     try {
       const auth = getAuth();
@@ -40,24 +39,22 @@ const Sidebar = () => {
           </li>
         </Link>
         <div className='hidden md:inline-block w-full h-0.5 bg-gray-200 my-3'></div>
-        <Link to='' className='text-lg tracking-wide'>
+        <Link to='/profile' className='text-lg tracking-wide'>
           <li className='flex flex-row items-center gap-2'>
             <AiOutlineUser className='text-2xl text-primaryRed' />
             <span className='hidden md:block'>My Profile</span>
           </li>
         </Link>
-        <Link to='' className='text-lg tracking-wide'>
+        <Link to='/bookmarks' className='text-lg tracking-wide'>
           <li className='flex flex-row items-center gap-2'>
             <BsBookmark className='text-xl text-primaryRed' />
             <span className='hidden md:block'>My Bookmarks</span>
           </li>
         </Link>
-        <Link to='' className='text-lg tracking-wide'>
-          <li className='flex flex-row items-center gap-2' onClick={() => logoutHandler()}>
-            <IoMdExit className='text-2xl text-primaryRed' />
-            <span className='hidden md:block'>Logout</span>
-          </li>
-        </Link>
+        <li className='flex flex-row items-center gap-2 cursor-pointer' onClick={() => logoutHandler()}>
+          <IoMdExit className='text-2xl text-primaryRed' />
+          <span className='hidden md:block'>Logout</span>
+        </li>
       </ul>
     </div>
   );

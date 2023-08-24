@@ -10,6 +10,7 @@ import LogIn from './pages/LogIn';
 import ForgotPassword from './pages/ForgotPassword';
 import Bookmarks from './pages/Bookmarks';
 import Loading from './components/Loading';
+import Profile from './pages/Profile';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -40,6 +41,7 @@ const App = () => {
         <Route element={isAuthenticated ? <RootLayout /> :  <Navigate to='/log-in' />}>
           <Route path='/' element={<Bookmarks />} />
           <Route path='/bookmarks' element={<Bookmarks />} />
+          <Route path='/profile' element={<Profile />} />
         </Route>
       </Routes>
     </>
