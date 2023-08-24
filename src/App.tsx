@@ -14,9 +14,9 @@ const App = () => {
   return (
     <>
       <Routes>
+        <Route path='/sign-up' element={!isAuthenticated ? <SingUp /> : <Navigate to='/' />} />
+        <Route path='/log-in' element={!isAuthenticated ? <LogIn /> : <Navigate to='/' />} />
         <Route path='/' element={<RootLayout />}>
-          <Route path='/sign-up' element={!isAuthenticated ? <SingUp /> : <Navigate to='/' />} />
-          <Route path='/log-in' element={!isAuthenticated ? <LogIn /> : <Navigate to='/' />} />
           <Route path='/forgot-password' element={!isAuthenticated ? <ForgotPassword /> : <Navigate to='/' />} />
           <Route path='/bookmarks' element={isAuthenticated ? <Bookmarks /> : <Navigate to='/' />} />
           <Route path='*' element={<ErrorPage />} />
