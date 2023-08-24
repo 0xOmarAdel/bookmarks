@@ -21,6 +21,8 @@ const App = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setIsAuthenticated(true)
+      } else {
+        setIsAuthenticated(false)
       }
       setIsLoading(false);
     });
@@ -32,11 +34,12 @@ const App = () => {
     <>
       <Routes>
         <Route path='*' element={<ErrorPage />} />
-        <Route path='/sign-up' element={!isAuthenticated ? <SingUp /> : <Navigate to='/' />} />
-        <Route path='/log-in' element={!isAuthenticated ? <LogIn /> : <Navigate to='/' />} />
-        <Route path='/forgot-password' element={!isAuthenticated ? <ForgotPassword /> : <Navigate to='/' />} />
-        <Route path='/' element={<RootLayout />}>
-          <Route path='/bookmarks' element={isAuthenticated ? <Bookmarks /> : <Navigate to='/' />} />
+        <Route path='/sign-up' element={!isAuthenticated ? <SingUp /> : <Navigate to='/bookmarks' />} />
+        <Route path='/log-in' element={!isAuthenticated ? <LogIn /> : <Navigate to='/bookmarks' />} />
+        <Route path='/forgot-password' element={!isAuthenticated ? <ForgotPassword /> : <Navigate to='/bookmarks' />} />
+        <Route element={isAuthenticated ? <RootLayout /> :  <Navigate to='/log-in' />}>
+          <Route path='/' element={<Bookmarks />} />
+          <Route path='/bookmarks' element={<Bookmarks />} />
         </Route>
       </Routes>
     </>

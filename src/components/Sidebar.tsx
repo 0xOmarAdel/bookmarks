@@ -1,8 +1,20 @@
-import { BsBookmark } from "react-icons/bs"; 
+import { BsBookmark, BsBoxArrowInRight } from "react-icons/bs"; 
 import { AiOutlineStar, AiOutlineFire, AiOutlineSearch, AiOutlineUser } from "react-icons/ai"; 
+import { IoMdExit } from "react-icons/io"; 
 import { Link } from "react-router-dom";
+import { getAuth } from 'firebase/auth';
 
 const Sidebar = () => {
+
+  const logoutHandler = () => {
+    try {
+      const auth = getAuth();
+      auth.signOut();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className='w-screen md:w-fit h-fit md:h-screen fixed md:static bottom-0 py-5 md:pt-16 md:pb-10 px-8 bg-white shadow-xl'>
       <h3 className='hidden md:flex flex-row items-center gap-2 mb-8 text-3xl text-primaryRed font-bold tracking-wide'>
@@ -38,6 +50,12 @@ const Sidebar = () => {
           <li className='flex flex-row items-center gap-2'>
             <BsBookmark className='text-xl text-primaryRed' />
             <span className='hidden md:block'>My Bookmarks</span>
+          </li>
+        </Link>
+        <Link to='' className='text-lg tracking-wide'>
+          <li className='flex flex-row items-center gap-2' onClick={() => logoutHandler()}>
+            <IoMdExit className='text-2xl text-primaryRed' />
+            <span className='hidden md:block'>Logout</span>
           </li>
         </Link>
       </ul>
