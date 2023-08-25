@@ -3,9 +3,9 @@ import Sidebar from '../components/Sidebar'
 
 const RootLayout = () => {
   return (
-    <div className='flex flex-row gap-10'>
+    <div className='flex flex-row gap-16 min-h-screen'>
       <Sidebar />
-      <div className='grow py-8'>
+      <div className='grow my-16 pr-16'>
         <Outlet />
       </div>
     </div>

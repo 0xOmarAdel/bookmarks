@@ -1,5 +1,5 @@
 import { BsBookmark } from "react-icons/bs"; 
-import { AiOutlineStar, AiOutlineFire, AiOutlineSearch, AiOutlineUser } from "react-icons/ai"; 
+import { AiOutlineUser } from "react-icons/ai"; 
 import { IoMdExit } from "react-icons/io"; 
 import { Link } from "react-router-dom";
 import { getAuth } from 'firebase/auth';
@@ -15,7 +15,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className='w-screen md:w-fit h-fit md:h-screen fixed md:static bottom-0 py-5 md:pt-16 md:pb-10 px-8 bg-white shadow-xl'>
+    <div className='w-screen md:w-fit md:h-auto fixed md:static bottom-0 py-5 md:pt-16 md:pb-10 px-8 bg-white shadow-xl'>
       <h3 className='hidden md:flex flex-row items-center gap-2 mb-8 text-3xl text-primaryRed font-bold tracking-wide'>
         <span>Bookmarks</span>
       </h3>
