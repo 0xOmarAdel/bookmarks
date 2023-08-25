@@ -20,25 +20,6 @@ const Sidebar = () => {
         <span>Bookmarks</span>
       </h3>
       <ul className='flex flex-row md:flex-col items-center md:items-start justify-evenly gap-4'>
-        <Link to='' className='text-lg tracking-wide'>
-          <li className='flex flex-row items-center gap-2'>
-            <AiOutlineStar className='text-2xl text-primaryRed' />
-            <span className='hidden md:block'>Top Bookmarks</span>
-          </li>
-        </Link>
-        <Link to='' className='text-lg tracking-wide'>
-          <li className='flex flex-row items-center gap-2'>
-            <AiOutlineFire className='text-2xl text-primaryRed' />
-            <span className='hidden md:block'>New Bookmarks</span>
-          </li>
-        </Link>
-        <Link to='' className='text-lg tracking-wide'>
-          <li className='flex flex-row items-center gap-2'>
-            <AiOutlineSearch className='text-2xl text-primaryRed' />
-            <span className='hidden md:block'>Search</span>
-          </li>
-        </Link>
-        <div className='hidden md:inline-block w-full h-0.5 bg-gray-200 my-3'></div>
         <Link to='/profile' className='text-lg tracking-wide'>
           <li className='flex flex-row items-center gap-2'>
             <AiOutlineUser className='text-2xl text-primaryRed' />
@@ -51,6 +32,7 @@ const Sidebar = () => {
             <span className='hidden md:block'>My Bookmarks</span>
           </li>
         </Link>
+        <div className='hidden md:inline-block w-full h-0.5 bg-gray-200 my-3'></div>
         <li className='flex flex-row items-center gap-2 cursor-pointer' onClick={() => logoutHandler()}>
           <IoMdExit className='text-2xl text-primaryRed' />
           <span className='hidden md:block'>Logout</span>
