@@ -8,7 +8,7 @@ import {db} from '../firebase';
 import {useEffect, useState} from 'react';
 import { getAuth } from 'firebase/auth';
 
-const NewBookmarkForm = ({ categories, reFetchCategories }) => {
+const NewBookmarkForm: React.FC = ({ categories, reFetchCategories }) => {
   const auth = getAuth();
 
   const list = categories?.map(category => {
