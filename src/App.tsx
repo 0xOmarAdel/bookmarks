@@ -12,7 +12,7 @@ import Bookmarks from './pages/Bookmarks';
 import Loading from './components/Loading';
 import Profile from './pages/Profile';
 
-const App = () => {
+const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 

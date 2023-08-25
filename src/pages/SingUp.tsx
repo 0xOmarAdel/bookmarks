@@ -8,7 +8,7 @@ import Input from '../ui/Input';
 import { AiOutlineMail, AiOutlineUser } from 'react-icons/ai';
 import { VscKey } from 'react-icons/vsc';
 
-const SingUp = () => {
+const SingUp: React.FC = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');

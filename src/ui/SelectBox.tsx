@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { IoIosArrowDown } from 'react-icons/io';
 import useClickOutside from '../hooks/useClickOutside';
 
-const SelectBox = (props) => {
+const SelectBox: React.FC = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleHandler = () => {

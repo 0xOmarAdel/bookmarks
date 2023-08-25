@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import Input from "../ui/Input";
 import { AiOutlineMail } from "react-icons/ai";
 
-const ForgotPassword = () => {
+const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState('');
 
   const submitHandler = async(e) => {

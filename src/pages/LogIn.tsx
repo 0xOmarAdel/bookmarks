@@ -6,7 +6,7 @@ import Input from '../ui/Input';
 import { AiOutlineMail } from 'react-icons/ai';
 import { VscKey } from 'react-icons/vsc';
 
-const LogIn = () => {
+const LogIn: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

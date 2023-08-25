@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
 
-const RootLayout = () => {
+const RootLayout: React.FC = () => {
   return (
     <div className='flex flex-row gap-16 min-h-screen'>
       <Sidebar />

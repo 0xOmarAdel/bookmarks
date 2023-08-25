@@ -4,7 +4,7 @@ import { IoMdExit } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { getAuth } from 'firebase/auth';
 
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
   const logoutHandler = () => {
     try {
       const auth = getAuth();

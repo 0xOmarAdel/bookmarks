@@ -1,4 +1,4 @@
-const Input = ({ type, id, placeholder, value, onChange, icon: Icon }) => {
+const Input: React.FC = ({ type, id, placeholder, value, onChange, icon: Icon }) => {
   return (
     <div className='relative'>
       <input

@@ -3,7 +3,7 @@ import useGetFirestoreData from '../hooks/useGetFirestoreData';
 import {getAuth} from 'firebase/auth';
 import Loading from './Loading';
 
-const BookmarkCategories = (props) => {
+const BookmarkCategories: React.FC = (props) => {
   const auth = getAuth();
 
   const {
