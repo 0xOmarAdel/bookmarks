@@ -38,7 +38,7 @@ const BookmarkCategories = (props) => {
   return (
     <>
       {
-      filteredArray.length > 0 ?
+      filteredArray?.length > 0 ?
         <div className='flex flex-row flex-wrap mr-0 md:-mr-10'>
           {
             filteredArray?.map(category =>
