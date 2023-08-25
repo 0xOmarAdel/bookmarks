@@ -2,7 +2,13 @@ import Card from "../ui/Card";
 import BookmarkCategoryIcon from "./BookmarkCategoryIcon";
 import BookmarkCategoryItem from "./BookmarkCategoryItem";
 
-const BookmarkCategory = (props) => {
+type Props = {
+  title: string;
+  bookmarks: { id: string; title: string; url: string; }[];
+}
+
+const BookmarkCategory: React.FC<Props> = (props) => {
+  console.log(props)
   return (
     <div className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4 pb-10 md:bp-0 md:pr-10">
       <Card className='w-full !text-left'>
