@@ -1,4 +1,9 @@
-const Button: React.FC = (props) => {
+type Props = {
+  className: string;
+  text: string;
+}
+
+const Button: React.FC<Props> = (props) => {
   let classes = 'w-full bg-primaryRed hover:bg-darkRed text-white font-bold py-1.5 px-4 rounded transition duration-500'
   if (props.className) {
     classes += ' ' + props.className;

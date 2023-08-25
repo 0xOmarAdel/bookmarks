@@ -1,4 +1,18 @@
-const Input: React.FC = ({ type, id, placeholder, value, onChange, icon: Icon }) => {
+import { IconType } from 'react-icons';
+
+type Props = {
+  type: string;
+  id: string;
+  placeholder: string;
+  value: string;
+  onChange: (text: string) => void;
+  icon: IconType;
+}
+const Input: React.FC<Props> = ({ type, id, placeholder, value, onChange, icon: Icon }) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(event.target.value);
+  };
+
   return (
     <div className='relative'>
       <input
@@ -6,7 +20,7 @@ const Input: React.FC = ({ type, id, placeholder, value, onChange, icon: Icon })
         id={id}
         placeholder={placeholder}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={handleInputChange}
         className='w-full border border-gray-300 rounded py-2 pl-12 pr-2 outline-none'
         autoComplete='off'
       />

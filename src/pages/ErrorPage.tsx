@@ -1,7 +1,7 @@
 const ErrorPage: React.FC = () => {
   return (
-    <div>: React.FC</div>
+    <div>ErrorPage</div>
   );
 };
 
-export default : React.FC;
+export default ErrorPage;

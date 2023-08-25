@@ -1,4 +1,10 @@
-const Card: React.FC = (props) => {
+type Props = {
+  className: string;
+  title: string;
+  children: React.ReactNode;
+}
+
+const Card: React.FC<Props> = (props) => {
   let classes = 'w-1/2 h-fit bg-white shadow-lg rounded px-8 pt-6 pb-8 text-center'
   if (props.className) {
     classes += ' ' + props.className;
