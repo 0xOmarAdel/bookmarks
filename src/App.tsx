@@ -39,7 +39,7 @@ const App = () => {
         <Route path='/log-in' element={!isAuthenticated ? <LogIn /> : <Navigate to='/bookmarks' />} />
         <Route path='/forgot-password' element={!isAuthenticated ? <ForgotPassword /> : <Navigate to='/bookmarks' />} />
         <Route element={isAuthenticated ? <RootLayout /> :  <Navigate to='/log-in' />}>
-          <Route path='/' element={<Bookmarks />} />
+          <Route path='/' element={<Navigate to='/bookmarks' />} />
           <Route path='/bookmarks' element={<Bookmarks />} />
           <Route path='/profile' element={<Profile />} />
         </Route>
