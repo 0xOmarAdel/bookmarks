@@ -1,5 +1,5 @@
 const Button = (props) => {
-  let classes = 'w-full bg-primaryRed hover:bg-darkRed text-white font-bold py-2 px-4 rounded transition duration-500'
+  let classes = 'w-full bg-primaryRed hover:bg-darkRed text-white font-bold py-1.5 px-4 rounded transition duration-500'
   if (props.className) {
     classes += ' ' + props.className;
   }
