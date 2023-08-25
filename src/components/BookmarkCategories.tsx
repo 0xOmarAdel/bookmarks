@@ -36,13 +36,20 @@ const BookmarkCategories = (props) => {
   const filteredArray = data?.filter((value) => value !== undefined);
 
   return (
-    <div className='flex flex-row flex-wrap mr-0 md:-mr-10'>
+    <>
       {
-        filteredArray?.map(category =>
-          <BookmarkCategory key={category.id} {...category} />
-        )
+      filteredArray.length > 0 ?
+        <div className='flex flex-row flex-wrap mr-0 md:-mr-10'>
+          {
+            filteredArray?.map(category =>
+              <BookmarkCategory key={category.id} {...category} />
+            )
+          }
+        </div>
+      :
+        <p className='mt-28 text-3xl text-center'>You don't have any <span className='text-primaryRed font-semibold'>bookmarks</span> in your account yet!</p>
       }
-    </div>
+    </>
   );
 };
 
