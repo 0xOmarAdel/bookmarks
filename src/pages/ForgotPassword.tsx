@@ -8,8 +8,8 @@ import { AiOutlineMail } from "react-icons/ai";
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState('');
 
-  const submitHandler = async(e) => {
-    e.preventDefault();
+  const submitHandler = async (event: React.FormEvent) => {
+    event.preventDefault();
     try {
       const auth = getAuth();
       await sendPasswordResetEmail(auth, email);

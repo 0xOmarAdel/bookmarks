@@ -3,7 +3,11 @@ import useGetFirestoreData from '../hooks/useGetFirestoreData';
 import {getAuth} from 'firebase/auth';
 import Loading from './Loading';
 
-const BookmarkCategories: React.FC = (props) => {
+type Props = {
+  categories: { id: string; title: string }[];
+};
+
+const BookmarkCategories: React.FC<Props> = (props) => {
   const auth = getAuth();
 
   const {
@@ -16,7 +20,7 @@ const BookmarkCategories: React.FC = (props) => {
   if (userBookmarksLoading) return <Loading />;
 
   const data = props.categories?.map(category => {
-    const bookmarks = [];
+    const bookmarks: { id: string; title: string; url: string; }[] = [];
     userBookmarks?.map(bookmark => {
       if (bookmark.categoryId === category.id) {
         bookmarks.push({ id: bookmark.id, title: bookmark.title, url: bookmark.url })
