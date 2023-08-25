@@ -1,12 +1,16 @@
-const BookmarkCategoryItem = ({ bookmark }) => {
+type Props = {
+  bookmark: { id: string; title: string; url: string }
+}
+
+const BookmarkCategoryItem: React.FC<Props> = (props) => {
   return (
-    <li key={bookmark.id}>
+    <li key={props.bookmark.id}>
       <a
-        href={bookmark.url}
+        href={props.bookmark.url}
         target='_blank'
         className='whitespace-nowrap transition duration-500 hover:text-primaryRed'
       >
-        {bookmark.title}
+        {props.bookmark.title}
       </a>
     </li>
   );
