@@ -31,7 +31,7 @@ const Profile: React.FC = () => {
   const [newPassword2, setNewPassword2] = useState('');
   
   useEffect(() => {
-    if (userData) {
+    if (Object.keys(userData).length !== 0) {
       setFirstName(userData.firstName);
       setLastName(userData.lastName);
       setEmail(userData.email);
