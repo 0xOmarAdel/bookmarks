@@ -28,7 +28,7 @@ const SelectBox: React.FC<Props> = (props) => {
 
   const divClasses = 'flex flex-row items-center justify-between gap-3 rounded-sm py-0.5 pl-5 pr-2 text-xl cursor-pointer overflow-hidden shadow-md transition duration-500 hover:shadow-lg hover:shadow-slate-200';
   const iconClasses = 'text-lg text-slate-900 transition duration-500';
-  let ulClasses = 'w-fit absolute z-50 w-full bg-white mt-3 text-lg shadow-slate-100 opacity-0 transition duration-500';
+  let ulClasses = 'w-fit absolute z-50 bg-white mt-3 text-lg shadow-slate-100 opacity-0 transition duration-500';
   const liClasses = 'w-full py-1 px-5 text-slate-900 capitalize select-none whitespace-nowrap transition-all duration-500';
 
   const [visibility, setVisibility] = useState('invisible')
