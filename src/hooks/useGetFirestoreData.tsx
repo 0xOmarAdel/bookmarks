@@ -28,7 +28,6 @@ const useGetFirestoreData = (
   const [whereStatementValue, setWhereStatementValue] = useState(whereStatement?.rhs)
 
   const fetchData = useCallback(async () => {
-    setIsLoading(true);
     try {
       if (documentId) {
         const docSnap = await getDoc(doc(db, c, documentId));
@@ -96,6 +95,7 @@ const useGetFirestoreData = (
   }, [whereStatement]);
 
   const reFetchData = () => {
+    setIsLoading(true);
     fetchData();
   };
 
