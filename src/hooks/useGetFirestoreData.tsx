@@ -20,7 +20,7 @@ const useGetFirestoreData = (
   limit_?: number | null,
 ) => {
   const [data, setData] = useState<any>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
 
   const [whereStatementProperty, setWhereStatementProperty] = useState(whereStatement?.lhs)
