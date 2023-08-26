@@ -60,7 +60,7 @@ const NewBookmarkForm: React.FC<Props> = ({ categories, reFetchCategories }) => 
           <Input id='title' type='text' placeholder='Title' value={title} onChange={(newValue) => setTitle(newValue)} icon={AiOutlineFileText} />
           <Input id='url' type='text' placeholder='Url' value={url} onChange={(newValue) => setUrl(newValue)} icon={AiOutlineLink} />
         </div>
-        <div className='flex flex-row gap-6'>
+        <div className='flex flex-col sm:flex-row gap-6'>
           <SelectBox list={list} selected={category!} onSelect={setCategory} />
           <Button text='Submit' className='!w-fit px-12' />
         </div>
