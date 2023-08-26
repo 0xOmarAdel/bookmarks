@@ -10,3 +10,19 @@ html {
 .Toastify__toast-icon > svg {
   @apply fill-primaryRed;
 }
+
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+}
+ 
+::-webkit-scrollbar-thumb {
+  @apply bg-primaryRed;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-darkRed;
+}
