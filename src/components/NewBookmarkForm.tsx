@@ -62,7 +62,7 @@ const NewBookmarkForm: React.FC<Props> = ({ categories, reFetchCategories }) => 
         </div>
         <div className='flex flex-row gap-6'>
           <SelectBox list={list} selected={category!} onSelect={setCategory} />
-          <Button text='Submit' className='w-fit px-10' />
+          <Button text='Submit' className='!w-fit px-12' />
         </div>
       </form>
     </Card>
