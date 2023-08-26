@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "../ui/Button";
 import useGetFirestoreData from "../hooks/useGetFirestoreData";
-import { getAuth, updateEmail, updatePassword, updateProfile } from "firebase/auth";
+import { getAuth, updateEmail, updatePassword, updateProfile, EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
 import { doc, updateDoc } from "firebase/firestore";
 import Loading from "../components/Loading";
 import { db } from "../firebase";
@@ -13,6 +13,8 @@ import {toast} from 'react-toastify';
 
 const Profile: React.FC = () => {
   const auth = getAuth();
+  const user = auth.currentUser;
+
   const {
     data: userData,
     isLoading: userDataLoading,
@@ -52,7 +54,10 @@ const Profile: React.FC = () => {
         displayName: firstName
       });
 
-      await updateEmail(auth.currentUser!, email)
+      const credential = EmailAuthProvider.credential(user!.email!, currentPassword1);
+
+      await reauthenticateWithCredential(user!, credential);
+      await updateEmail(user!, email)
 
       const docRef = doc(db, 'users', auth.currentUser!.uid);
       await updateDoc(docRef, {
@@ -68,13 +73,16 @@ const Profile: React.FC = () => {
     }
   }
 
-  const changePasswordHandler = (event: React.FormEvent) => {
+  const changePasswordHandler = async (event: React.FormEvent) => {
     event.preventDefault();
     if (newPassword1 !== newPassword2) {
       toast.info('Both passwords need to match!')
     } else if (newPassword1.length < 6) {
       toast.info('New password should be at least 6 characters!')
     } else {
+      const credential = EmailAuthProvider.credential(user!.email!, currentPassword2);
+      await reauthenticateWithCredential(user!, credential);
+
       updatePassword(auth.currentUser!, newPassword1).then(() => {
         toast.info('Changed your password successfully!')
       }).catch((error) => {
