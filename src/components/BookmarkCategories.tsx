@@ -51,7 +51,7 @@ const BookmarkCategories: React.FC<Props> = (props) => {
     <>
       {
       filteredArray?.length > 0 ?
-        <div className='flex flex-row flex-wrap mr-0 md:-mr-10'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10'>
           {
             filteredArray?.map(category =>
               <BookmarkCategory key={category!.id} id={category!.id} title={category!.title} bookmarks={category!.bookmarks} reFetchCategories={props.reFetchCategories} />

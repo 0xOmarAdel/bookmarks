@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => {
   }
 
   return (
-    <div className='w-screen md:w-fit md:h-auto fixed md:static bottom-0 py-5 md:pt-16 md:pb-10 px-8 bg-white shadow-xl'>
+    <div className='w-screen md:min-w-fit md:w-60 md:h-auto fixed bottom-0 md:top-0 z-50 py-5 md:pt-16 md:pb-10 px-8 bg-white shadow-xl'>
       <h3 className='hidden md:flex flex-row items-center gap-2 mb-8 text-3xl text-primaryRed font-bold tracking-wide'>
         <span>Bookmarks</span>
       </h3>
