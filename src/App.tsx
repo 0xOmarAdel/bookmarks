@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import RootLayout from './pages/RootLayout';
 import ErrorPage from './pages/ErrorPage';
 
@@ -44,6 +47,19 @@ const App: React.FC = () => {
           <Route path='/profile' element={<Profile />} />
         </Route>
       </Routes>
+      <ToastContainer
+        position='bottom-right'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+        progressStyle={{ backgroundColor: '#D9083A' }}
+      />
     </>
   );
 };
