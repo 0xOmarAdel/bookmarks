@@ -78,6 +78,7 @@ const Profile: React.FC = () => {
       updatePassword(auth.currentUser!, newPassword1).then(() => {
         toast.info('Changed your password successfully!')
       }).catch((error) => {
+        console.log(error)
         toast.info('An error occurred while changing your password!')
       });
     }
