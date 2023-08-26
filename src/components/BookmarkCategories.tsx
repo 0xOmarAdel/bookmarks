@@ -2,6 +2,7 @@ import BookmarkCategory from './BookmarkCategory';
 import useGetFirestoreData from '../hooks/useGetFirestoreData';
 import {getAuth} from 'firebase/auth';
 import Loading from './Loading';
+import { useEffect } from 'react';
 
 type Props = {
   categories: { id: string; title: string }[];
@@ -14,14 +15,20 @@ const BookmarkCategories: React.FC<Props> = (props) => {
     data: userBookmarks,
     isLoading: userBookmarksLoading,
     error: userBookmarksError,
-    reFetchData: reFetchUserData
   } = useGetFirestoreData('bookmarks', null, { lhs: 'userId', op: '==', rhs: auth.currentUser!.uid });
+
+  useEffect(() => {
+    if (userBookmarksError && !userBookmarksLoading) {
+      console.log('error');
+    }
+  }, [userBookmarksError, userBookmarksLoading])
+  
 
   if (userBookmarksLoading) return <Loading />;
 
   const data = props.categories?.map(category => {
     const bookmarks: { id: string; title: string; url: string; }[] = [];
-    userBookmarks?.map(bookmark => {
+    userBookmarks?.map((bookmark: { id: string; title: string; url: string; categoryId: string; userId: string; }) => {
       if (bookmark.categoryId === category.id) {
         bookmarks.push({ id: bookmark.id, title: bookmark.title, url: bookmark.url })
       }
@@ -46,7 +53,7 @@ const BookmarkCategories: React.FC<Props> = (props) => {
         <div className='flex flex-row flex-wrap mr-0 md:-mr-10'>
           {
             filteredArray?.map(category =>
-              <BookmarkCategory key={category.id} {...category} />
+              <BookmarkCategory key={category!.id} id={category!.id} title={category!.title} bookmarks={category!.bookmarks} />
             )
           }
         </div>

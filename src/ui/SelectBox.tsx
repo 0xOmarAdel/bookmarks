@@ -3,9 +3,9 @@ import { IoIosArrowDown } from 'react-icons/io';
 import useClickOutside from '../hooks/useClickOutside';
 
 type Props = {
-  list: { id: number, text:string }[];
-  selected: { id: number, text:string };
-  onSelect: (item: { id: number, text:string }) => void;
+  list: { id: string, text: string }[];
+  selected: { id: string, text: string };
+  onSelect: (item: { id: string, text: string }) => void;
 }
 
 const SelectBox: React.FC<Props> = (props) => {
@@ -15,7 +15,7 @@ const SelectBox: React.FC<Props> = (props) => {
     setIsOpen(prevState => !prevState);
   };
 
-  const changeHandler = (item: { id: number, text:string }) => {
+  const changeHandler = (item: { id: string, text: string }) => {
     props.onSelect(item);
     setIsOpen(false);
   };
@@ -53,7 +53,7 @@ const SelectBox: React.FC<Props> = (props) => {
   
 
   return (
-    <div className='w-fit relative tracking-wide' ref={selectBoxRef}>
+    <div className='w-fit relative tracking-wide' ref={selectBoxRef as React.RefObject<HTMLDivElement>}>
       <div className={isOpen ? divClasses + ' shadow-md shadow-slate-200' : divClasses} onClick={toggleHandler}>
         <span className='capitalize select-none'>{props.selected?.text}</span>
         <IoIosArrowDown className={isOpen ? iconClasses + ' rotate-180' : iconClasses} />
@@ -62,7 +62,12 @@ const SelectBox: React.FC<Props> = (props) => {
       <ul className={isOpen ? ulClasses + ' !shadow-md !shadow-slate-300 !opacity-100' : ulClasses}>
         {
           props.list.filter(listItem => listItem?.id !== props.selected?.id).map(listItem => 
-            <li key={listItem.id} className={isOpen ? liClasses + ' opacity-100 cursor-pointer hover:bg-primaryRed hover:text-white' : liClasses} onClick={isOpen ? () => changeHandler(listItem) : () => {}}>{listItem.text}</li>
+            <li
+              key={listItem.id}
+              className={isOpen ? liClasses + ' opacity-100 cursor-pointer hover:bg-primaryRed hover:text-white' : liClasses}
+              onClick={isOpen ? () => changeHandler(listItem) : () => {}}>
+              {listItem.text}
+            </li>
           )
         }
       </ul>

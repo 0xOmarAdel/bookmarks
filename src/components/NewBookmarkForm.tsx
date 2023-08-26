@@ -21,7 +21,12 @@ const NewBookmarkForm: React.FC<Props> = ({ categories, reFetchCategories }) => 
   }) || [];
 
   useEffect(() => {
-    setCategory(list[0])
+    if (categories) {
+      const list = categories?.map(category => {
+        return { id: category.id, text: category.title }
+      }) || [];
+      setCategory(list[0])
+    }
   }, [categories])
   
   const [category, setCategory] = useState<{ id: string; text: string }>();
@@ -55,7 +60,7 @@ const NewBookmarkForm: React.FC<Props> = ({ categories, reFetchCategories }) => 
           <Input id='url' type='text' placeholder='Url' value={url} onChange={(newValue) => setUrl(newValue)} icon={AiOutlineLink} />
         </div>
         <div className='flex flex-row gap-6'>
-          <SelectBox list={list} selected={category} onSelect={setCategory} />
+          <SelectBox list={list} selected={category!} onSelect={setCategory} />
           <Button text='Submit' className='w-fit px-10' />
         </div>
       </form>

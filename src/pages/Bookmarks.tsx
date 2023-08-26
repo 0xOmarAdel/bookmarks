@@ -10,7 +10,7 @@ const Bookmarks: React.FC = () => {
     isLoading: categoriesDataLoading,
     error: categoriesDataError,
     reFetchData: reFetchCategoriesData
-  } = useGetFirestoreData('categories', null, null, 'title', 'asc', null);
+  } = useGetFirestoreData('categories', null, null, 'title', 'asc');
 
   useEffect(() => {
     if (categoriesDataError && !categoriesDataLoading) {

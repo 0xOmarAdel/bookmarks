@@ -3,6 +3,7 @@ import BookmarkCategoryIcon from "./BookmarkCategoryIcon";
 import BookmarkCategoryItem from "./BookmarkCategoryItem";
 
 type Props = {
+  id: string;
   title: string;
   bookmarks: { id: string; title: string; url: string; }[];
 }

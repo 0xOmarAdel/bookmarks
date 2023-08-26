@@ -1,15 +1,15 @@
 import { useEffect, useRef } from 'react';
 
-const useClickOutside = (callbackFun) => {
-  const elementRef = useRef(null);
-  const callBackFunRef = useRef(null);
+const useClickOutside = (callbackFun: () => void) => {
+  const elementRef = useRef<HTMLElement | null>(null);
+  const callBackFunRef = useRef<(() => void) | null>(null);
 
   callBackFunRef.current = callbackFun;
 
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!elementRef.current?.contains(e.target) && callBackFunRef.current) {
-        callBackFunRef.current(e);
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!elementRef.current?.contains(e.target as Node) && callBackFunRef.current) {
+        callBackFunRef.current();
       }
     };
 
