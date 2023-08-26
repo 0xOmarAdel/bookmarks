@@ -6,3 +6,7 @@ html {
   @apply bg-gray-50;
   box-sizing: border-box;
 }
+
+.Toastify__toast-icon > svg {
+  @apply fill-primaryRed;
+}
