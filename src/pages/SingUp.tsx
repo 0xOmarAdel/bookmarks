@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 import Input from '../ui/Input';
 import { AiOutlineMail, AiOutlineUser } from 'react-icons/ai';
 import { VscKey } from 'react-icons/vsc';
+import { toast } from 'react-toastify';
 
 const SingUp: React.FC = () => {
   const [firstName, setFirstName] = useState('');
@@ -30,8 +31,10 @@ const SingUp: React.FC = () => {
         timestamp: serverTimestamp()
       };
       await setDoc(doc(db, 'users', user.uid), data);
+
+      toast.info('Created account successfully!')
     } catch (error) {
-      console.log(error)
+      toast.info('An error occurred!')
     }
   };
 

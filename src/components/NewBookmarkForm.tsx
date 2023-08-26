@@ -7,6 +7,7 @@ import {addDoc, collection} from 'firebase/firestore';
 import {db} from '../firebase';
 import {useEffect, useState} from 'react';
 import { getAuth } from 'firebase/auth';
+import {toast} from 'react-toastify';
 
 type Props = {
   categories: { id: string; title: string }[];
@@ -43,12 +44,12 @@ const NewBookmarkForm: React.FC<Props> = ({ categories, reFetchCategories }) => 
         userId: auth.currentUser!.uid
       });
 
-      console.log('Bookmark added successfully!');
+      toast.info('Bookmark added successfully!')
       reFetchCategories();
       setTitle('');
       setUrl('');
     } catch (error) {
-      console.log(error);
+      toast.info('An error occurred while adding your bookmark!')
     }
   };
 

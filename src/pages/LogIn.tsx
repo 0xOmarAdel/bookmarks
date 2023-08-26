@@ -5,6 +5,7 @@ import Button from '../ui/Button';
 import Input from '../ui/Input';
 import { AiOutlineMail } from 'react-icons/ai';
 import { VscKey } from 'react-icons/vsc';
+import {toast} from 'react-toastify';
 
 const LogIn: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -14,11 +15,11 @@ const LogIn: React.FC = () => {
     event.preventDefault();
     try {
       const auth = getAuth();
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
 
-      console.log(userCredential)
+      toast.info('Welcome back!')
     } catch (error) {
-      console.log(error)
+      toast.info('An error occurred!')
     }
   };
 

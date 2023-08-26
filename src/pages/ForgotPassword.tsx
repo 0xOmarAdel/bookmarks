@@ -4,6 +4,7 @@ import Button from "../ui/Button";
 import {Link} from 'react-router-dom';
 import Input from "../ui/Input";
 import { AiOutlineMail } from "react-icons/ai";
+import {toast} from 'react-toastify';
 
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -13,8 +14,10 @@ const ForgotPassword: React.FC = () => {
     try {
       const auth = getAuth();
       await sendPasswordResetEmail(auth, email);
+
+      toast.info('Reset password email sent successfully!')
     } catch (error) {
-      console.log(error)
+      toast.info('An error occurred!')
     }
   }
 

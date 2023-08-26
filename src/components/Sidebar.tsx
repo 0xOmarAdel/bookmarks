@@ -3,14 +3,17 @@ import { AiOutlineUser } from "react-icons/ai";
 import { IoMdExit } from "react-icons/io"; 
 import { Link } from "react-router-dom";
 import { getAuth } from 'firebase/auth';
+import {toast} from 'react-toastify';
 
 const Sidebar: React.FC = () => {
-  const logoutHandler = () => {
+  const logoutHandler = async () => {
     try {
       const auth = getAuth();
-      auth.signOut();
+      await auth.signOut();
+
+      toast.info('You\'ve logged out successfully!')
     } catch (error) {
-      console.log(error);
+      toast.info('An error occurred while logging you out!')
     }
   }
 

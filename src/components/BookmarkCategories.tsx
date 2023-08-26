@@ -3,6 +3,7 @@ import useGetFirestoreData from '../hooks/useGetFirestoreData';
 import {getAuth} from 'firebase/auth';
 import Loading from './Loading';
 import { useEffect } from 'react';
+import {toast} from 'react-toastify';
 
 type Props = {
   categories: { id: string; title: string }[];
@@ -19,11 +20,10 @@ const BookmarkCategories: React.FC<Props> = (props) => {
 
   useEffect(() => {
     if (userBookmarksError && !userBookmarksLoading) {
-      console.log('error');
+      toast.info('An error occurred with fetching your data!')
     }
   }, [userBookmarksError, userBookmarksLoading])
   
-
   if (userBookmarksLoading) return <Loading />;
 
   const data = props.categories?.map(category => {

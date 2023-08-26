@@ -9,6 +9,7 @@ import Card from "../ui/Card";
 import Input from "../ui/Input";
 import { AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { VscKey } from "react-icons/vsc";
+import {toast} from 'react-toastify';
 
 const Profile: React.FC = () => {
   const auth = getAuth();
@@ -37,14 +38,11 @@ const Profile: React.FC = () => {
 
   useEffect(() => {
     if (userDataError && !userDataLoading) {
-      console.log('An error occurred!');
+      toast.info('An error occurred with fetching your data!')
     }
   }, [userDataError, userDataLoading])
   
-  
-  if (userDataLoading) {
-    return <Loading />;
-  }
+  if (userDataLoading) return <Loading />;
 
   const submitHandler = async (event: React.FormEvent) => {
     try {
@@ -64,25 +62,23 @@ const Profile: React.FC = () => {
       });
 
       reFetchUserData();
-      console.log('Updated your profile successfully!')
+      toast.info('Updated your profile successfully!')
     } catch (error) {
-      console.log(error)
-      console.log('An error occurred!')
+      toast.info('An error occurred while updating your data!')
     }
   }
 
   const changePasswordHandler = (event: React.FormEvent) => {
     event.preventDefault();
     if (newPassword1 !== newPassword2) {
-      console.log('Both passwords need to match!')
+      toast.info('Both passwords need to match!')
     } else if (newPassword1.length < 6) {
-      console.log('New password should be at least 6 characters!')
+      toast.info('New password should be at least 6 characters!')
     } else {
       updatePassword(auth.currentUser!, newPassword1).then(() => {
-        console.log('Changed your password successfully!')
+        toast.info('Changed your password successfully!')
       }).catch((error) => {
-        console.log(error)
-        console.log('An error occurred!')
+        toast.info('An error occurred while changing your password!')
       });
     }
   };

@@ -3,6 +3,7 @@ import useGetFirestoreData from '../hooks/useGetFirestoreData';
 import Loading from "../components/Loading";
 import NewBookmarkForm from '../components/NewBookmarkForm';
 import { useEffect } from "react";
+import {toast} from 'react-toastify';
 
 const Bookmarks: React.FC = () => {
   const {
@@ -14,7 +15,7 @@ const Bookmarks: React.FC = () => {
 
   useEffect(() => {
     if (categoriesDataError && !categoriesDataLoading) {
-      console.log('error')
+      toast.info('An error occurred with fetching your data!')
     }
   }, [categoriesDataError, categoriesDataLoading])
   
