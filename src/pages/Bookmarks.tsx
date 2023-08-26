@@ -25,7 +25,7 @@ const Bookmarks: React.FC = () => {
   return (
     <>
       <NewBookmarkForm categories={categoriesData} reFetchCategories={reFetchCategoriesData} />
-      <BookmarkCategories categories={categoriesData} />
+      <BookmarkCategories categories={categoriesData} reFetchCategories={reFetchCategoriesData} />
     </>
   );
 };

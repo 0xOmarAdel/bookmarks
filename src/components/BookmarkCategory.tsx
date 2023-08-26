@@ -6,6 +6,7 @@ type Props = {
   id: string;
   title: string;
   bookmarks: { id: string; title: string; url: string; }[];
+  reFetchCategories: () => void;
 }
 
 const BookmarkCategory: React.FC<Props> = (props) => {
@@ -19,7 +20,7 @@ const BookmarkCategory: React.FC<Props> = (props) => {
       <ul className='flex flex-col gap-3 text-xl capitalize'>
         {
           props.bookmarks.map(bookmark =>
-            <BookmarkCategoryItem key={bookmark.id} bookmark={bookmark} />
+            <BookmarkCategoryItem key={bookmark.id} bookmark={bookmark} reFetchCategories={props.reFetchCategories} />
           )
         }
       </ul>

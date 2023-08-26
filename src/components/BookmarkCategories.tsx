@@ -7,6 +7,7 @@ import {toast} from 'react-toastify';
 
 type Props = {
   categories: { id: string; title: string }[];
+  reFetchCategories: () => void;
 };
 
 const BookmarkCategories: React.FC<Props> = (props) => {
@@ -53,7 +54,7 @@ const BookmarkCategories: React.FC<Props> = (props) => {
         <div className='flex flex-row flex-wrap mr-0 md:-mr-10'>
           {
             filteredArray?.map(category =>
-              <BookmarkCategory key={category!.id} id={category!.id} title={category!.title} bookmarks={category!.bookmarks} />
+              <BookmarkCategory key={category!.id} id={category!.id} title={category!.title} bookmarks={category!.bookmarks} reFetchCategories={props.reFetchCategories} />
             )
           }
         </div>
