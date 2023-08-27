@@ -3,6 +3,7 @@ import { SiProbot } from "react-icons/si";
 import { AiOutlineFileText, AiOutlineFolderOpen } from "react-icons/ai";
 import { FaGraduationCap, FaRegMoneyBillAlt, FaLanguage, FaDev } from "react-icons/fa";
 import { GiPirateFlag } from "react-icons/gi";
+import { HiOutlineCode } from "react-icons/hi";
 import { FiShoppingCart } from "react-icons/fi";
 import { VscKey } from "react-icons/vsc";
 import { BsController, BsPeople, BsGear } from "react-icons/bs";
@@ -34,7 +35,7 @@ const BookmarkCategoryIcon : React.FC<Props> = (props) => {
     case 'piracy':
       return  <GiPirateFlag className='text-2xl' />;
     case 'programming':
-      return  <FaDev className='text-2xl' />;
+      return  <HiOutlineCode className='text-2xl' />;
     case 'shopping':
       return  <FiShoppingCart className='text-2xl' />;
     case 'shortcuts':
