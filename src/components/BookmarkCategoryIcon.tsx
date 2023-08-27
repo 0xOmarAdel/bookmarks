@@ -1,5 +1,6 @@
 import { BiDumbbell, BiBook, BiBookmark } from "react-icons/bi";
 import { SiProbot } from "react-icons/si";
+import { RiArticleLine } from "react-icons/ri";
 import { AiOutlineFileText, AiOutlineFolderOpen } from "react-icons/ai";
 import { FaGraduationCap, FaRegMoneyBillAlt, FaLanguage } from "react-icons/fa";
 import { GiPirateFlag } from "react-icons/gi";
@@ -16,6 +17,8 @@ const BookmarkCategoryIcon : React.FC<Props> = (props) => {
   switch (props.categoryTitle.toLocaleLowerCase()) {
     case 'ai':
       return  <SiProbot className='text-2xl' />;
+    case 'articles':
+      return  <RiArticleLine className='text-2xl' />;
     case 'books':
       return  <BiBook className='text-2xl' />;
     case 'challenges':
