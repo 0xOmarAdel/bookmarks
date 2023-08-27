@@ -1,7 +1,7 @@
 import { BiDumbbell, BiBook, BiBookmark } from "react-icons/bi";
 import { SiProbot } from "react-icons/si";
 import { AiOutlineFileText, AiOutlineFolderOpen } from "react-icons/ai";
-import { FaGraduationCap, FaRegMoneyBillAlt, FaLanguage, FaDev } from "react-icons/fa";
+import { FaGraduationCap, FaRegMoneyBillAlt, FaLanguage } from "react-icons/fa";
 import { GiPirateFlag } from "react-icons/gi";
 import { HiOutlineCode } from "react-icons/hi";
 import { FiShoppingCart } from "react-icons/fi";
