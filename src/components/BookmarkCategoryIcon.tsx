@@ -3,6 +3,7 @@ import { SiProbot } from "react-icons/si";
 import { RiArticleLine } from "react-icons/ri";
 import { AiOutlineFileText, AiOutlineFolderOpen } from "react-icons/ai";
 import { FaGraduationCap, FaRegMoneyBillAlt, FaLanguage } from "react-icons/fa";
+import { LuPaintbrush2 } from "react-icons/lu";
 import { GiPirateFlag } from "react-icons/gi";
 import { HiOutlineCode } from "react-icons/hi";
 import { FiShoppingCart } from "react-icons/fi";
@@ -11,44 +12,46 @@ import { BsController, BsPeople, BsGear } from "react-icons/bs";
 
 type Props = {
   categoryTitle: string;
-}
+};
 
-const BookmarkCategoryIcon : React.FC<Props> = (props) => {
+const BookmarkCategoryIcon: React.FC<Props> = (props) => {
   switch (props.categoryTitle.toLocaleLowerCase()) {
-    case 'ai':
-      return  <SiProbot className='text-2xl' />;
-    case 'articles':
-      return  <RiArticleLine className='text-2xl' />;
-    case 'books':
-      return  <BiBook className='text-2xl' />;
-    case 'challenges':
-      return  <BiDumbbell className='text-2xl' />;
-    case 'courses':
-      return  <FaGraduationCap className='text-2xl' />;
-    case 'docs':
-      return  <AiOutlineFileText className='text-2xl' />;
-    case 'freelancing':
-      return  <FaRegMoneyBillAlt className='text-2xl' />;
-    case 'gaming':
-      return  <BsController className='text-2xl' />;
-    case 'languages':
-      return  <FaLanguage className='text-2xl' />;
-    case 'libraries':
-      return  <AiOutlineFolderOpen className='text-2xl' />;
-    case 'piracy':
-      return  <GiPirateFlag className='text-2xl' />;
-    case 'programming':
-      return  <HiOutlineCode className='text-2xl' />;
-    case 'shopping':
-      return  <FiShoppingCart className='text-2xl' />;
-    case 'shortcuts':
-      return  <VscKey className='text-2xl' />;
-    case 'social media':
-      return  <BsPeople className='text-2xl' />;
-    case 'tools':
-      return  <BsGear className='text-2xl' />;
+    case "ai":
+      return <SiProbot className="text-2xl" />;
+    case "articles":
+      return <RiArticleLine className="text-2xl" />;
+    case "books":
+      return <BiBook className="text-2xl" />;
+    case "challenges":
+      return <BiDumbbell className="text-2xl" />;
+    case "courses":
+      return <FaGraduationCap className="text-2xl" />;
+    case "design":
+      return <LuPaintbrush2 className="text-2xl translate-y-0.5" />;
+    case "docs":
+      return <AiOutlineFileText className="text-2xl" />;
+    case "freelancing":
+      return <FaRegMoneyBillAlt className="text-2xl" />;
+    case "gaming":
+      return <BsController className="text-2xl" />;
+    case "languages":
+      return <FaLanguage className="text-2xl" />;
+    case "libraries":
+      return <AiOutlineFolderOpen className="text-2xl" />;
+    case "piracy":
+      return <GiPirateFlag className="text-2xl" />;
+    case "programming":
+      return <HiOutlineCode className="text-2xl" />;
+    case "shopping":
+      return <FiShoppingCart className="text-2xl" />;
+    case "shortcuts":
+      return <VscKey className="text-2xl" />;
+    case "social media":
+      return <BsPeople className="text-2xl" />;
+    case "tools":
+      return <BsGear className="text-2xl" />;
     default:
-      return  <BiBookmark className='text-2xl' />;
+      return <BiBookmark className="text-2xl" />;
   }
 };
 
