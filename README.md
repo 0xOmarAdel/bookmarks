@@ -39,7 +39,7 @@ Run the following command to start the development server:
 `npm run dev`
 Open your browser and visit `http://localhost:3000` to access the app.
 
-To access the deployed version of the app, visit [Movie Maze App](https://bookmarks-react-firebase.netlify.app).
+To access the deployed version of the app, visit [Bookmarks App](https://bookmarks-react-firebase.netlify.app).
 
 ## License
 
