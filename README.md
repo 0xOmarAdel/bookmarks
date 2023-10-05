@@ -40,8 +40,3 @@ Run the following command to start the development server:
 Open your browser and visit `http://localhost:3000` to access the app.
 
 To access the deployed version of the app, visit [Bookmarks App](https://bookmarks-react-firebase.netlify.app).
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-Feel free to further modify this README file as needed.
