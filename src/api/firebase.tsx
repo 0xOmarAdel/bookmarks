@@ -1,3 +1,5 @@
+import { apiKey } from "./apiKey";
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
@@ -6,12 +8,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCWJ32n1pYl0y6H6EssFgJpiV1MNVxvL-M",
+  apiKey: apiKey,
   authDomain: "bookmarks-react-firebase.firebaseapp.com",
   projectId: "bookmarks-react-firebase",
   storageBucket: "bookmarks-react-firebase.appspot.com",
   messagingSenderId: "631184849852",
-  appId: "1:631184849852:web:0974b4b0f8f7d1743c09b9"
+  appId: "1:631184849852:web:0974b4b0f8f7d1743c09b9",
 };
 
 // Initialize Firebase

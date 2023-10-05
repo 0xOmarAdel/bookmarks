@@ -1,40 +1,48 @@
-import { useState } from 'react'
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { useState } from "react";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { db } from '../firebase';
-import Button from '../ui/Button';
-import {Link} from 'react-router-dom';
-import Input from '../ui/Input';
-import { AiOutlineMail, AiOutlineUser } from 'react-icons/ai';
-import { VscKey } from 'react-icons/vsc';
-import { toast } from 'react-toastify';
+import { db } from "../api/firebase";
+import Button from "../ui/Button";
+import { Link } from "react-router-dom";
+import Input from "../ui/Input";
+import { AiOutlineMail, AiOutlineUser } from "react-icons/ai";
+import { VscKey } from "react-icons/vsc";
+import { toast } from "react-toastify";
 
 const SingUp: React.FC = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const submitHandler = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
       const auth = getAuth();
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-      updateProfile(auth.currentUser!,{
-        displayName: firstName + ' ' + lastName
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      updateProfile(auth.currentUser!, {
+        displayName: firstName + " " + lastName,
       });
       const user = userCredential.user;
       const data = {
         firstName,
         lastName,
         email,
-        timestamp: serverTimestamp()
+        timestamp: serverTimestamp(),
       };
-      await setDoc(doc(db, 'users', user.uid), data);
+      await setDoc(doc(db, "users", user.uid), data);
 
-      toast.info('Created account successfully!')
+      toast.info("Created account successfully!");
     } catch (error) {
-      toast.info('An error occurred!')
+      toast.info("An error occurred!");
     }
   };
 
