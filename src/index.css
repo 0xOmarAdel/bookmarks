@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply bg-gray-50;
+  @apply bg-primaryDark;
   box-sizing: border-box;
 }
 
@@ -16,9 +16,9 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-200;
+  @apply bg-primarylessDarker;
 }
- 
+
 ::-webkit-scrollbar-thumb {
   @apply bg-primaryRed;
 }
