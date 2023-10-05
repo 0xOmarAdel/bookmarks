@@ -3,7 +3,7 @@ const Loading: React.FC = () => {
     <div className='w-full h-screen'>
       <svg
         aria-hidden="true"
-        className="w-10 h-10 mt-10 mx-auto text-gray-200 animate-spin fill-primaryRed"
+        className="w-10 h-10 mt-10 mx-auto text-primarylessDarker animate-spin fill-primaryRed"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
