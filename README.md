@@ -30,7 +30,7 @@ This is a web application built using React, React Router, TypeScript, and Tailw
 3. Install dependencies: `npm install`
 ## Configuration
 
-To use Firebase Firestore as the database, you need to set up your Firebase project and obtain the configuration details. Add the configuration details to the `src/firebaseConfig.tsx` file. Then create a .env  file in the project root directory and add the following line:
+To use Firebase Firestore as the database, you need to set up your Firebase project and obtain the configuration details. Add the configuration details to the `src/api/firebase.tsx` file. Then create a .env  file in the project root directory and add the following line:
 `VITE_API_KEY=your_api_key_here`
 
 ## Usage 
