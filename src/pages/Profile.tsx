@@ -47,7 +47,7 @@ const Profile: React.FC = () => {
 
   useEffect(() => {
     if (userDataError && !userDataLoading) {
-      toast.info("An error occurred with fetching your data!");
+      toast.info("An error occurred while fetching your data!");
     }
   }, [userDataError, userDataLoading]);
 
