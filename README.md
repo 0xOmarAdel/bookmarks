@@ -10,14 +10,13 @@ This is a web application built using React, React Router, TypeScript, and Tailw
 
 - **Authentication**: Provides sign-up, log-in, and forgot password functionality.
 
+## Technologies Used
 
-## Tools Used
-
-- [React.js](https://reactjs.org/) 
-- [React Router](https://reactrouter.com/) 
-- [TypeScript](https://www.typescriptlang.org/) 
-- [Tailwind CSS](https://tailwindcss.com/) 
-- [Firebase Firestore](https://firebase.google.com/products/firestore)
+- React
+- React Router
+- TypeScript
+- Tailwind CSS
+- Firebase Firestore
 
 ## Prerequisites
 
@@ -28,13 +27,14 @@ This is a web application built using React, React Router, TypeScript, and Tailw
 1. Clone the repository: `git clone https://github.com/0xOmarAdel/bookmarks-app.git`
 2. Navigate to the project directory: `cd bookmarks-app`
 3. Install dependencies: `npm install`
+
 ## Configuration
 
-To use Firebase Firestore as the database, you need to set up your Firebase project and obtain the configuration details. Add the configuration details to the `src/api/firebase.tsx` file. Then create a .env  file in the project root directory and add the following line:
+To use Firebase Firestore as the database, you need to set up your Firebase project and obtain the configuration details. Add the configuration details to the `src/api/firebase.tsx` file. Then create a .env file in the project root directory and add the following line:
 `VITE_API_KEY=your_api_key_here`
 
-## Usage 
- 
+## Usage
+
 Run the following command to start the development server:
 `npm run dev`
 Open your browser and visit `http://localhost:3000` to access the app.
